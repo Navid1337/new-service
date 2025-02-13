@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from application import func
+import func
 from datetime import datetime, timedelta                    # Används för att hämta dagens datum
 
 
