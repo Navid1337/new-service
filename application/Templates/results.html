@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Resultatsida{% endblock %}
+{% block header %}<h2 style="text-align:center;">Resultat för: {{ date|safe }} i prisklass: {{ price_class|safe }}</h2>{% endblock %}
+
+{% block content %}
+</br>
+<p style="text-align:center;">Här är elpriserna för den valda dagen, utforska och analysera priserna nedan.</p>
+
+<style>.center-table {display: flex; justify-content: center; align-items: center;}</style>
+<div class="center-table">
+    <p> {{ df_html|safe }} </p>
+</div>
+{% endblock %}
+{% block footer %}{% endblock %}
+
+

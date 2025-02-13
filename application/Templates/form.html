@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Formulärsida{% endblock %}
+{% block header %}<h2 style="text-align:center;">Utforska Elpriser</h2>{% endblock %}
+
+{% block content %}
+</br>
+<p style="text-align:center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum vel, amet iusto, molestiae impedit fuga deserunt nesciunt inventore hic dolorum quasi iure molestias maiores recusandae sit non aliquam eligendi in eaque, delectus sequi? Quidem officiis, libero quas repellat minus corporis.</p>
+
+<!-- Formulär-->
+<!-- När vi skickar formuläret tar vi oss till endpoint /results -->
+<!-- Informationen skickas dit också-->
+<style>.center-table {display: flex; justify-content: center; align-items: center;}</style>
+<div class="center-table">
+    <form action="/results" method="post" class="mx-auto text-center my-5">
+        <h5>Prisklass: </h5>                        
+        <select class="form-select form-control-sm" name="price_class"> <!-- price_class -->
+            <option selected>Välj prisklass</option>
+            <option value="SE1">SE1 - Luleå - Norra Sverige</option>
+            <option value="SE2">SE2 - Sundsvall / Norra Mellansverige</option>
+            <option value="SE3">SE3 - Stockholm / Södra Mellansverige</option>
+            <option value="SE4">SE4 - Malmö / Södra Sverige</option>
+        </select>
+
+        <!-- Kalender-->
+        <!-- https://www.w3schools.com/tags/att_input_type_date.asp -->
+        <!-- https://www.w3schools.com/tags/att_input_min.asp -->
+        <h5>Datum: </h5>
+        <input type="date" name="date" id="date" min="2022-11-01" max="{{tomorrow}}"/> <!-- date-->
+        <!-- Submit-knappen-->
+        <input type="submit" value="Submit" name="submit_button" />
+    </div>
+</form>
+{% endblock %}
+{% block footer %}{% endblock %}
+
+<!-- Gjorde först flera dropdown menyer för år, månad och dag
+Men det blev för krångligt att begränsa datumen på det här sättet.
+Tänkte först att begränsa det i stil med:
+{% if year == 2022 %}}
+    { så ska månaderna och dagarna begränsas till 1a nov}
+{% endif %}
+
+Fastnade väldigt länge här så jag övergav det helt och fixade kalendern istället-->
+
+
