@@ -47,7 +47,10 @@ def results():
 
 
 # Servern kan inte hitta resursen.
-@app.errorhandler(404)                                      # Tack Dennis! 
+@app.errorhandler(404)                                          # Vid 404!
 def not_found(e):
     return render_template("404.html")
 
+
+if __name__ == '__main__':
+    app.run(debug=True)
